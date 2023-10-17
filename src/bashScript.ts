@@ -1,6 +1,4 @@
-
-
-export const makeScript = (inputFilePath: string):string => `#!/bin/bash
+export const makeScript = (inputFilePath: string): string => `#!/bin/bash
 DISPLAY=":0.0"
 XAUTHORITY="/home/USER/.Xauthority"
 XDG_RUNTIME_DIR="/run/user/1000"
@@ -20,7 +18,7 @@ if [[ $CABLE_PLUGGED == 'yes' ]]; then
             datetime=$(cat "$file_path")
             
             current_time=$(date +"%s")
-            if [ "$datetime" -gt "$current_time" ]; then
+            if [ "$current_time" -gt "$datetime" ]; then
                 notify-send --urgency=critical "Battery optimization" "Battery reached 80%, unplug the power cable to optimize battery life."
             fi
         else

@@ -132,6 +132,13 @@ app.whenReady().then(async () => {
                 await fullReset(dataFolder);
                 dataFolder = await getAndSetupDataFolder();
             }
+        },
+        {
+            label: 'Exit',
+            type: 'normal',
+            click: async (clickedItem, window, keyboardEvent) => {
+                app.quit()
+            }
         }
     ]);
 
